@@ -1,5 +1,5 @@
+import { Filter } from './index';
 
-const Filter = require("./index.js");
 const filterDefault = new Filter();
 let testCases = [
     "this sentence should be 100% clean",

@@ -1,5 +1,9 @@
-export = Filter;
-declare class Filter {
+export declare class Filter {
+    private config?;
+    private readonly foo;
+    private readonly replacements;
+    private readonly cleanWith;
+    private minFiltered;
     /**
      * Constructs filter
      * @param {Object} config options for the filter
@@ -11,25 +15,19 @@ declare class Filter {
      * @param {boolean} config.useRegex true for enabling regex filtering, false for exact dictionary match *WARNING: large amounts of regex is much slower* [defailt: false]
      */
     constructor(config?: {
-        list: string[];
-        // filter?: Array<string | RegExp>;
-        // minFiltered?: number;
-        cleanWith?: string | string[];
-        // strictness?: number;
+        list?: string[];
+        filter?: Set<string | RegExp>;
+        minFiltered?: number;
+        cleanWith?: string;
+        strictness?: number;
         useRegex?: boolean;
-    });
-    useRegex: boolean;
-    filter: Set<RegExp> | Set<string>;
-    config: {};
-    cleanWith: string;
-    minFiltered: number;
-    replacements: Map<RegExp, string>;
+    } | undefined);
     /**
      * converts to lowercase, replaces accented characters, replaces common symbol/l33t text, removes non-alphabetical characters
-     * @param {String} string string to normalize
+     * @param {String} str string to normalize
      * @returns {String} cleaned string
      */
-    normalize(string: string): string;
+    normalize(str: string): string;
     /**
      * censors filtered words
      * @param {String} string message to censor filter words
@@ -41,7 +39,7 @@ declare class Filter {
      * @param {String} str string to get possible cases of
      * @returns {String[][]} all possible combinations for each word
      */
-    getAllCombos(str: string): string[][];
+    private getAllCombos;
     /**
      * console.logs function calls with given string
      * @param {String} str string to run tests on
@@ -49,16 +47,16 @@ declare class Filter {
     debug(str: string): void;
     /**
      * gets all the indexes of words that are filtered
-     * @param {String} string message to check
+     * @param {String} str message to check
      * @returns {number[]} indexes of filtered words, empty if none detected
      */
-    getUncleanWordIndexes(string: string): number[];
+    getUncleanWordIndexes(str: string): number[];
     /**
      * checks if a string has any filtered words
-     * @param {String} string message to test
+     * @param {String} str message to test
      * @returns {boolean} true if contains filtered words
      */
-    isUnclean(string: string): boolean;
+    isUnclean(str: string): boolean;
     /**
      * Checks if a word is filtered or not
      * @param {String} word word to check
