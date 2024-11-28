@@ -1,4 +1,4 @@
-import * as filtersets from '../filtersets/en.json' with { type: 'json' };
+import * as filtersets from '../filtersets/en.json' assert { type: 'json' };
 export class Filter {
     /**
      * Constructs filter

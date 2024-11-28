@@ -1,4 +1,4 @@
-import * as filtersets from '../filtersets/en.json';
+import * as filtersets from '../filtersets/en.json' with { type: 'json' };
 
 
 interface IFoo1 {

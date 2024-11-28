@@ -1,4 +1,4 @@
-import { Filter } from './index.js';
+import { Filter } from './index';
 const filterDefault = new Filter();
 let testCases = [
     "this sentence should be 100% clean",

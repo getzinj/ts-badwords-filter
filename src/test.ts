@@ -1,7 +1,7 @@
-import { Filter } from './index';
+import { Filter } from './index.js';
 
 const filterDefault = new Filter();
-let testCases = [
+let testCases: string[] = [
     "this sentence should be 100% clean",
     "this sentence has one dirty word: porn",
     "the filter detects duplicated letters in bad words: ppooooorrrnnnnn",
@@ -10,7 +10,7 @@ let testCases = [
     "also works with multiple bad words in one sentence or accents: porn and héntai",
     "test + test porn test"
 ]
-testCases.forEach((c, num) => {
+testCases.forEach((c: string, num: number): void => {
     // num = 1;
     // c = "the filter detects duplicated letters in bad words: ppooooorrrnnnnn";
     console.log("\x1b[4m%s\x1b[0m", `Test Case ${num}`);
