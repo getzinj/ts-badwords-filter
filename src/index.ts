@@ -1,4 +1,5 @@
-import * as filtersets from '../filtersets/en.json';
+import filtersets from '../filtersets/en.json' with { type: 'json' };
+console.error(JSON.stringify(filtersets));
 
 
 interface IFoo1 {
@@ -48,6 +49,7 @@ export class Filter {
   }) {
     let list: string[] | undefined = config ? config.list : undefined;
     if (!list) {
+      console.error(JSON.stringify(filtersets.filter));
       list = filtersets.filter;
     } //use default list
     this.foo.useRegex = config?.useRegex ?? false;

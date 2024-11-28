@@ -64,3 +64,4 @@ export declare class Filter {
      */
     isWordUnclean(word: string): boolean;
 }
+//# sourceMappingURL=index.d.ts.map

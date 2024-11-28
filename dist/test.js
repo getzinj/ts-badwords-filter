@@ -1,7 +1,5 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const index_1 = require("./index");
-const filterDefault = new index_1.Filter();
+import { Filter } from './index.js';
+const filterDefault = new Filter();
 let testCases = [
     "this sentence should be 100% clean",
     "this sentence has one dirty word: porn",
