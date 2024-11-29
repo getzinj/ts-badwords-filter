@@ -1,5 +1,4 @@
 import filtersets from '../filtersets/en.json' with { type: 'json' };
-console.error(JSON.stringify(filtersets));
 
 
 interface IFoo1 {

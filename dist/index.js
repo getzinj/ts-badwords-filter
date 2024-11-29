@@ -1,5 +1,4 @@
 import filtersets from '../filtersets/en.json' with { type: 'json' };
-console.error(JSON.stringify(filtersets));
 export class Filter {
     /**
      * Constructs filter
