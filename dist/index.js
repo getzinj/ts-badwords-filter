@@ -46,7 +46,6 @@ export class Filter {
         });
         let list = config ? config.list : undefined;
         if (!list) {
-            console.error(JSON.stringify(filtersets.filter));
             list = filtersets.filter;
         } //use default list
         this.foo.useRegex = (_a = config === null || config === void 0 ? void 0 : config.useRegex) !== null && _a !== void 0 ? _a : false;

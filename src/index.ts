@@ -48,7 +48,6 @@ export class Filter {
   }) {
     let list: string[] | undefined = config ? config.list : undefined;
     if (!list) {
-      console.error(JSON.stringify(filtersets.filter));
       list = filtersets.filter;
     } //use default list
     this.foo.useRegex = config?.useRegex ?? false;
